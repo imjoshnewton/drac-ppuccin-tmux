@@ -36,7 +36,7 @@ main() {
   visible_track="${visible_track:$scroll_position:$max_length}"
 
   # Output play time and visible track
-  echo "  $play_time $visible_track"
+  echo " $play_time $visible_track"
 }
 
 # Run main program
