@@ -276,8 +276,10 @@ main() {
           script="%a %m/%d %R ${timezone}"
         elif $show_day_month; then # only dd/mm
           script="%a %d/%m %I:%M %p ${timezone}"
-        else
+        elif $timezone; then
           script="%a %m/%d %I:%M %p ${timezone}"
+        else # default
+          script="%a %m/%d %I:%M %p"
         fi
       fi
     elif [ $plugin = "synchronize-panes" ]; then
