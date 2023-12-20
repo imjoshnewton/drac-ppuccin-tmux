@@ -172,6 +172,11 @@ main() {
       tmux set-option -g status-right-length 250
       script="#($current_dir/cwd.sh)"
 
+    elif [ $plugin = "cal" ]; then
+      IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-cal-colors" "green dark_gray")
+      tmux set-option -g status-right-length 250
+      script="#($current_dir/cal.sh)"
+
     elif [ $plugin = "fossil" ]; then
       IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-fossil-colors" "green dark_gray")
       tmux set-option -g status-right-length 250
