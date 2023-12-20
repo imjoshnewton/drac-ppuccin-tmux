@@ -173,7 +173,7 @@ main() {
       script="#($current_dir/cwd.sh)"
 
     elif [ $plugin = "cal" ]; then
-      IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-cal-colors" "dark_purple red")
+      IFS=' ' read -r -a colors <<<$(get_tmux_option "@dracula-cal-colors" "dark_gray red")
       tmux set-option -g status-right-length 250
       script="#($current_dir/cal.sh)"
 
