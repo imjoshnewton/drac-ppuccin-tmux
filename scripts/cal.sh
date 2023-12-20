@@ -79,6 +79,7 @@ parse_result() {
   # Debug output
   echo "Debug: Time variable is set to '$time'"
 }
+
 convert_to_24hr_format() {
   local input_time="$1"
   # echo "Attempting to convert: '$input_time'" # Debugging line
@@ -108,6 +109,8 @@ calculate_times() {
   epoc_diff=$((epoc_meeting - epoc_now))
   minutes_till_meeting=$((epoc_diff / 60))
 }
+
+# This is for when the time is in the format HH:MM
 # calculate_times() {
 #   # Check if time is in the correct format
 #   if [[ $time =~ ^[0-9]{2}:[0-9]{2}$ ]]; then
