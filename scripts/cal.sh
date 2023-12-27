@@ -5,6 +5,8 @@ ALERT_POPUP_BEFORE_SECONDS=10
 NERD_FONT_FREE="󰃯"
 NERD_FONT_MEETING="󰃰"
 
+white='#cdd6f4'
+
 # Set custom colors based on the Dracula color palette
 FREE_TEXT_COLOR="${white}"  # Use your desired color from the palette
 MEETING_TEXT_COLOR="${red}" # Set back to default
