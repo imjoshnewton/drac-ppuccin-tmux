@@ -14,7 +14,7 @@ MEETING_TEXT_COLOR="${red}" # Set back to default
 # Function to colorize the output
 colorize() {
   local input="$1"
-  echo -e "${FREE_TEXT_COLOR}${input}${MEETING_TEXT_COLOR}"
+  echo "#[fg=${FREE_TEXT_COLOR}] ${input}"
 }
 
 get_attendees() {
