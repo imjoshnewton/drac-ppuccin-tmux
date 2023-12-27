@@ -5,6 +5,16 @@ ALERT_POPUP_BEFORE_SECONDS=10
 NERD_FONT_FREE="󰃯"
 NERD_FONT_MEETING="󰃰"
 
+# Set custom colors based on the Dracula color palette
+FREE_TEXT_COLOR="${white}"  # Use your desired color from the palette
+MEETING_TEXT_COLOR="${red}" # Set back to default
+
+# Function to colorize the output
+colorize() {
+  local input="$1"
+  echo -e "${MEETING_TEXT_COLOR}${input}${FREE_TEXT_COLOR}"
+}
+
 get_attendees() {
   attendees=$(
     icalBuddy \
@@ -148,7 +158,8 @@ print_tmux_status() {
     echo "$NERD_FONT_MEETING \
 			$time $title ($minutes_till_meeting minutes)"
   else
-    echo "$NERD_FONT_FREE"
+    # echo "$NERD_FONT_FREE"
+    colorize "$NERD_FONT_FREE"
   fi
 
   if [[ $epoc_diff -gt $ALERT_POPUP_BEFORE_SECONDS && epoc_diff -lt $ALERT_POPUP_BEFORE_SECONDS+10 ]]; then
