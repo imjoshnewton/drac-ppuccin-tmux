@@ -156,7 +156,7 @@ display_popup() {
 
 print_tmux_status() {
   if [[ $minutes_till_meeting && $minutes_till_meeting -lt $ALERT_IF_IN_NEXT_MINUTES &&
-    $minutes_till_meeting -gt -60 ]]; then
+    $minutes_till_meeting -gt -20 ]]; then
     echo "$NERD_FONT_MEETING \
 			$time $title ($minutes_till_meeting minutes)"
   else
