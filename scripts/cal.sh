@@ -89,7 +89,7 @@ parse_result() {
   # echo $title
 
   # Debug output
-  echo "Debug: Time variable is set to '$time'"
+  # echo "Debug: Time variable is set to '$time'"
 }
 
 convert_to_24hr_format() {
@@ -104,16 +104,16 @@ calculate_times() {
   # Convert to 24-hour format and check for errors
   converted_time=$(convert_to_24hr_format "$time")
   if [ $? -ne 0 ] || [ -z "$converted_time" ]; then
-    echo "Error in time conversion."
+    echo ""
     return 1
   fi
 
-  echo "Converted time: $converted_time" # Debugging line
+  # echo "Converted time: $converted_time" # Debugging line
 
   # Now proceed with the date command using the converted time
   epoc_meeting=$(date -j -f "%H:%M" "$converted_time" +%s 2>/dev/null)
   if [ $? -ne 0 ]; then
-    echo "Error in date calculation."
+    echo ""
     return 1
   fi
 
